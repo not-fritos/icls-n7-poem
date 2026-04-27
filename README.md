@@ -1,43 +1,21 @@
 # N+7 Poetry Animation Website
 
-A vanilla JavaScript and HTML website that animates an n+7 poetry project, where nouns are cycled through dictionary definitions from N+15 back to N+0.
+A vanilla JavaScript and HTML website that animates an n+7 poetry project, 
+where nouns are cycled through dictionary definitions from N+15 back to N+0.
 
-## Features
+This poem was originally created for a class assignment in Arts-Based Research 
+Methods in our week on poetry. It was half-baked in the original submission in 
+2025 and revisited for a showcase at ICLS 2026.
 
-- **Justified Text Layout**: The poem is displayed with proper text justification
-- **Cycling Noun Animation**: Nouns cycle from N+15 → N+14 → ... → N+0
-- **Sequential Animation**: After the first noun reaches N+0, the next noun starts cycling
-- **Interactive Controls**: Start, pause, and reset the animation
-- **Adjustable Speed**: Control animation timing with a slider
-- **Click to Cycle**: Click individual nouns to manually cycle them when animation is paused
-- **Visual Feedback**: Animated transitions and hover effects for nouns
+The n+7 poem is a form of constraint-based writing where a poem is created by 
+replacing a noun in a sentence with another noun that is related to the 
+original noun. This poem was generated on the introduction text in my Personal
+Statement for the Graduate Program at UW-Madison. 
 
-## Files
+The nouns list was generated using The 
+[Spoonbill Generator N+7 Machine](http://www.spoonbill.org/n+7/maketext.php).
 
-- `index.html` - Main HTML structure with responsive design
-- `poem-animation.js` - JavaScript animation logic and interactivity
-- `script.json` - Original n+7 poetry data (N+0 through N+15)
-- `correct-noun-extractor.js` - Data extraction and analysis utilities
-- `README.md` - This documentation
+The code implementing this website animation was planned by myself, but was 
+implemented with help from Windsurf.
 
-## How It Works
-
-1. **Data Extraction**: The `correct-noun-extractor.js` analyzes the JSON data to identify the 15 nouns that transform across the 16 versions
-2. **Template Rendering**: The poem template with `___` placeholders is rendered with interactive noun spans
-3. **Animation Logic**: Nouns cycle sequentially from N+15 back to N+0, then move to the next noun
-4. **User Interaction**: Users can control playback speed, pause/resume, and click individual nouns
-
-## Usage
-
-1. Open `index.html` in a web browser
-2. Click "Start Animation" to begin the cycling sequence
-3. Use the speed slider to adjust animation timing
-4. Click individual nouns to manually cycle them (when paused)
-5. Use "Reset" to return to the initial state
-
-## Technical Details
-
-- **Pure Vanilla JavaScript**: No external dependencies
-- **CSS Animations**: Smooth transitions using CSS keyframes
-- **Responsive Design**: Works on desktop and mobile devices
-- **Semantic HTML**: Proper structure for accessibility
+To see the scratch notes check [scratch.md](./scratch.md).
