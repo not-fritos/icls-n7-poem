@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N+7 Poetry Animation</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fafafa;
+            line-height: 1.6;
+        }
+        
+        .poem-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .noun {
+            color: #2563eb;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            border-bottom: 2px dotted #2563eb;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            vertical-align: -0.1em;
+            height: 1.2em;
+            line-height: 1.2;
+        }
+        
+        .noun:hover {
+            background-color: #eff6ff;
+            transform: scale(1.05);
+        }
+        
+        .noun.animating {
+            animation: pulse 0.5s ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; transform: scale(1.1); }
+            100% { opacity: 1; }
+        }
+        
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #1d4ed8;
+        }
+        
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .info {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+        
+        .current-noun {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        
+        .speed-control {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .speed-control label {
+            margin-right: 10px;
+        }
+        
+        input[type="range"] {
+            width: 200px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>we are not pros</h1>
+    <p>and maybe that's okay</p>
+    <div class="poem-container" id="poem">
+        Loading poem...
+    </div>
+    
+    <div class="controls">
+        <button id="startBtn">Start Animation</button>
+        <button id="pauseBtn" disabled>Pause</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="speed-control">
+        <label for="speedSlider">Animation Speed:</label>
+        <input type="range" id="speedSlider" min="10" max="500" value="250" step="10">
+        <span id="speedValue">250ms</span>
+    </div>
+    
+    <div class="info">
+        <p>Current noun cycling: <span class="current-noun" id="currentNoun">None</span></p>
+        <p>Nouns cycle from N+15 back to N+0, then move to the next noun</p>
+    </div>
+    
+    <script src="poem-animation.js"></script>
+</body>
+</html>
